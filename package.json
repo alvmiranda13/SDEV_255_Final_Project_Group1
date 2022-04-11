@@ -3,5 +3,23 @@
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "nodemon": "^2.0.15"
-  }
+  },
+  "name": "sdev_255_final_project_group1",
+  "description": "Repository for our final group project.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvmiranda13/SDEV_255_Final_Project_Group1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvmiranda13/SDEV_255_Final_Project_Group1/issues"
+  },
+  "homepage": "https://github.com/alvmiranda13/SDEV_255_Final_Project_Group1#readme"
 }
