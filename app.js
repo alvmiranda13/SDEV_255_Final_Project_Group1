@@ -15,11 +15,17 @@ app.listen(3000);
 app.get('/', (req,res)=>{
     res.render('index', {title: 'home'});
 });
+app.get('/login', (req,res)=>{
+    res.render('login', {title: 'login'});
+});
+app.get('/courseDescription', (req,res)=>{
+    res.render('courseDescription', {title: 'courseDescription'});
+});
 app.get('/courses', (req,res)=>{
     res.render('courses', {title: 'courses'});
 });
-app.get('/login', (req,res)=>{
-    res.render('login', {title: 'login'});
+app.get('/registration', (req,res)=>{
+    res.render('registration', {title: 'registration'});
 });
 
 
