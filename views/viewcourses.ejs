@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+<body class="bg-light">
+    <%- include('./partials/nav.ejs') %> 
+    
+  <div class="containter-fluid">
+    <div class="text-justify align-items-center"> 
+      <h1>Courses</h1>
+      <p>These are all the courses currently offered with our program.</p>
+      <% if(course.length > 0){ %>
+
+        <% course.forEach(course =>{ %>
+          
+          
+            <h4 id="courseTitle"><a href="/viewcourses/<%= course._id %>"> <%= course.courseTitle %></a>  </h4>
+          
+            <p id="courseSnippet"> <%= course.courseSnippet %> </p>
+          
+          <% }) %>
+
+        <% }else{ %>
+          
+          <p>There are no courses to display.</p>
+        
+        <% } %>
+
+      <div>
+       <button class="btn-primary btn-lg" >Add Course</button>
+      </div>
+
+      
+      <%- include('./partials/footer.ejs') %>
+    </div>
+  </div>
+</body>
+</html>
+
+

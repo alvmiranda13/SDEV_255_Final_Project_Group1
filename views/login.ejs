@@ -12,6 +12,16 @@
     
 
       <%- include ('./partials/login-form') %> 
+      <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            // get values
+            const username = form.username.value;
+            const password = form.password.value;
+           
+        })
+      </script>
     
   </div>
   <div class="text-center align-items-center"> 

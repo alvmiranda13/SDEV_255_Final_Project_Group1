@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+<body class="bg-light">
+    <%- include('./partials/nav.ejs') %> 
+
+  <div class="containter-fluid">
+    <div class="text-center "> 
+        <h1>Create A Course</h1>
+
+        <form class="form-control row" action="/viewcourses" method="POST" >  
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="courseTitle" >Course Title: </label>
+            <div class="form-control-lg">
+                <input class="col-sm-5" type="text" id="courseTitle" name="courseTitle" placeholder="Enter course title." required>
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="courseSnippet" >Course Snippet: </label>
+            <div class="form-control-lg">
+              <input class="col-sm-5"  type="text" id="courseSnippet" name="courseSnippet" placeholder="Enter course snippet." required>
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="courseDescription">Course Description: </label>
+            <div class="form-control-lg">
+              <textarea class="col-sm-5" id="courseDescription" name="courseDescription" placeholder="Enter course description." required></textarea>
+            </div>
+          </div>
+              <button class="col-5 col-sm-2 btn-primary ">Submit Course</button>
+        </form>
+    
+      
+      <%- include('./partials/footer.ejs') %>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
