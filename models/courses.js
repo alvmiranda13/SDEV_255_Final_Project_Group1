@@ -7,10 +7,6 @@ const coursesSchema = new Schema({
         type: String,
         required: true
     },
-    courseInstructor:{
-        type: String,
-        required: true
-    },
     courseSnippet:{
         type: String,
         required: true
@@ -18,7 +14,7 @@ const coursesSchema = new Schema({
     courseDescription:{
         type: String,
         required: true
-    },
+    }
 
 },{timestamps: true});
 //

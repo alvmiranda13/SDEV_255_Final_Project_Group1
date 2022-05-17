@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head.ejs') %> 
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+</head>
 <body class="bg-light">
     <%- include('./partials/nav.ejs') %> 
 
   <div class="containter-fluid">
     <div class="text-left"> 
-      <h1>Course Description</h1>
-      <h2>DBMS 101 Database Design and Management</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, molestiae suscipit? Iste natus hic officia voluptatum 
-        dolorum exercitationem. Ipsam sint qui ducimus voluptate quam? Omnis, dicta at. Voluptate voluptas iure quisquam 
-        exercitationem impedit optio eum adipisci ipsa, vitae id ad ullam quidem dolores reprehenderit, amet tempora nemo 
-        sint praesentium. Quidem natus exercitationem quod consectetur, nemo soluta asperiores repudiandae quasi necessitatibus 
-        fugit iusto dicta similique sunt quaerat tempora, vero adipisci dolores vitae nulla mollitia quibusdam, inventore 
-        nobis? Quidem nemo dolorum a, ut porro nesciunt perspiciatis itaque voluptatibus reprehenderit asperiores aliquam 
-        maiores atque ad possimus accusantium blanditiis dignissimos praesentium natus in molestias.</p>
-      <h2>Info 109 Informatics Fundamentals</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quaerat? Sed similique recusandae quasi consequatur 
-        quia distinctio temporibus, excepturi fugit. Quos enim rerum explicabo atque ab tenetur et corrupti vero, commodi 
-        aperiam saepe quaerat expedita nesciunt totam asperiores excepturi sunt beatae quisquam sequi quia nihil facere? 
-        Recusandae inventore modi ad quibusdam. Aliquam harum dolor sit illum porro magnam dolorum officiis expedita numquam 
-        voluptatem perferendis saepe rem, suscipit in nisi nobis commodi. Accusantium rem obcaecati dignissimos.</p>
-      <h2>SDEV 120 Computing Logic</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores tempora impedit sit omnis, magnam cum accusantium 
-        amet consequatur reprehenderit. Voluptatum consectetur maxime harum? Quis tempora ullam beatae accusamus soluta 
-        eveniet odio vero! A dolorem excepturi amet asperiores iste illo cum nihil aliquam tenetur atque? Delectus saepe 
-        repellat temporibus incidunt accusamus?</p>
-      <h2>SDEV 153 Website Development</h2>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur in fugit minima hic voluptas voluptatem, 
-        ad adipisci corporis consequatur repudiandae officiis expedita maxime, nulla odio labore. In, veritatis delectus 
-        natus quidem sequi aliquid quibusdam numquam id harum. Autem neque consequuntur perferendis explicabo dolores 
-        praesentium, quia officia pariatur iusto tempore repellat quasi? Quod temporibus laboriosam quam molestias, sequi 
-        eum minus tenetur esse ipsum praesentium earum, recusandae officia ea. Omnis fugiat possimus sunt! Voluptas debitis 
-        voluptatem similique, modi aliquam sapiente omnis saepe cumque quae corporis quidem praesentium ipsum impedit nam 
-        quibusdam doloremque? Accusantium doloremque dolores sequi magni, repellendus eligendi sed dolorum delectus.</p>
-      <h2>SDEV 140 Intro to Software Development</h2> 
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repellendus magnam cumque? Nesciunt sint sed 
-        magnam eum, dolorum eveniet ea iusto totam, ex saepe sunt asperiores. Molestiae expedita iste qui debitis, doloribus 
-        accusamus eaque eum minima, non sed optio aliquam deserunt pariatur distinctio porro provident placeat. Deserunt id 
-        laboriosam dolorum!</p> 
-     
+      <div class="containter-fluid">
+        <div id="Course Content">
+            <h2><%= course.courseTitle %></h2>
+            <div id="Course Body">
+                <%= course.courseDescription  %> 
+            </div>
+            <button><a class="delete" data-doc="<%= course.id %>">Delete</a></button>
+        </div>
+
+    
+        <%- include('./partials/footer.ejs') %>
+   
+            <script>
+                const trashcan = document.querySelector('a.delete');
+                trashcan.addEventListener('click', (e) =>{
+                    const endpoint = `/viewcourses/${trashcan.dataset.doc}`;
+                    fetch(endpoint,{
+                        method: 'DELETE',
+                    })
+                    .then((response) => response.json())
+                    .then((data) => window.location.href = data.redirect)
+                    .catch(err => console.log(err));
+                    
+                  })
+        </script>
+        </div>
       <%- include('./partials/footer.ejs') %>
     </div>
     

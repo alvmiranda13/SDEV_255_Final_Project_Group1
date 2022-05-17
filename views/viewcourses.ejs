@@ -5,17 +5,18 @@
     <%- include('./partials/nav.ejs') %> 
     
   <div class="containter-fluid">
-    <div class="text-center align-items-center"> 
+    <div class="text-justify align-items-center"> 
       <h1>Courses</h1>
       <p>These are all the courses currently offered with our program.</p>
-      <% if (Courses.length > 0){ %>
+      <% if(course.length > 0){ %>
 
-        <% Courses.forEach(Courses =>{ %>
+        <% course.forEach(course =>{ %>
           
-          <h3 class="courseTitle"> <% Courses.courseTitle %> </h3>
-          <h4 class="courseInstructor"> <% Courses.courseInstructor %> </h4>
-          <p class="courseSnippet"> <% Courses.courseSnippet %> </p>
-        
+          
+            <h4 id="courseTitle"><a href="/viewcourses/<%= course._id %>"> <%= course.courseTitle %></a>  </h4>
+          
+            <p id="courseSnippet"> <%= course.courseSnippet %> </p>
+          
           <% }) %>
 
         <% }else{ %>
